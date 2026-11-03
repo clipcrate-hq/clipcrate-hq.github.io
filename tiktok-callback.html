@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ClipCrate_HQ TikTok Login</title>
+<style>body{font-family:system-ui,Arial,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.6;color:#1b2440;background:#fff}
+textarea{width:100%;height:110px;font-size:15px;padding:8px;box-sizing:border-box}button{font-size:18px;padding:10px 22px;margin-top:10px;background:#d9480f;color:#fff;border:0;border-radius:6px;cursor:pointer}</style></head>
+<body><h1>ClipCrate_HQ Uploader: TikTok login</h1>
+<p id="msg">Reading the login code...</p>
+<textarea id="code" readonly></textarea><br><button id="copy">Copy code</button>
+<p>Paste this into the PowerShell window where it asks for the code, then press Enter. You can close this tab afterwards.</p>
+<script>
+var p=new URLSearchParams(location.search),c=p.get('code'),e=p.get('error');
+document.getElementById('msg').textContent=c?'Login worked. Copy this code:':('Login failed: '+(e||'no code')+' '+(p.get('error_description')||''));
+document.getElementById('code').value=c?(c+'|'+(p.get('state')||'')):'';
+document.getElementById('copy').onclick=function(){var t=document.getElementById('code');t.select();navigator.clipboard.writeText(t.value);this.textContent='Copied!';};
+</script></body></html>
